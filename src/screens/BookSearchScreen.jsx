@@ -189,6 +189,7 @@ function BookSearchScreen({ navigation }) {
       height: 38,
       width: '100%',
       fontSize: 16,
+      color: colors.text,
     },
     saveButton: {
       width: 60,

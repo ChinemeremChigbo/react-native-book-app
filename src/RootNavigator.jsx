@@ -73,12 +73,16 @@ function RootNavigator() {
       <BookStack.Screen
         name="BookSearch"
         component={BookSearchScreen}
-        sharedElements={(_, otherRoute) => (otherRoute.name === 'BookList' ? [{
-          id: 'search',
-          animation: 'fade',
-          resize: 'clip',
-          align: 'left-top',
-        }] : [])}
+        sharedElements={(_, otherRoute) => (otherRoute.name === 'BookList'
+          ? [
+            {
+              id: 'search',
+              animation: 'fade',
+              resize: 'clip',
+              align: 'left-top',
+            },
+          ]
+          : [])}
         options={{
           cardStyleInterpolator: fadeScreen,
           transitionSpec: {

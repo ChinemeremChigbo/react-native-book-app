@@ -2,7 +2,11 @@ import React from 'react';
 import {
   View, StyleSheet, FlatList, Pressable,
 } from 'react-native';
-import Animated, { useSharedValue, useAnimatedScrollHandler } from 'react-native-reanimated';
+import PropTypes from 'prop-types';
+import Animated, {
+  useSharedValue,
+  useAnimatedScrollHandler,
+} from 'react-native-reanimated';
 import { useTheme, useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -10,6 +14,31 @@ import Text from './Text';
 import Book from './Book';
 
 const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
+
+function EmptyList({
+  onPress, text, styles, iconColor,
+}) {
+  return (
+    <Pressable onPress={onPress} style={styles.emptyContainer}>
+      <AntDesign color={iconColor} size={27} name="book" />
+      <Text size={16} center style={styles.emptyText}>
+        {text}
+      </Text>
+    </Pressable>
+  );
+}
+
+EmptyList.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+  styles: PropTypes.shape({
+    emptyContainer: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+      .isRequired,
+    emptyText: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+      .isRequired,
+  }).isRequired,
+  iconColor: PropTypes.string.isRequired,
+};
 
 // horizontal flatlist of books
 function BookList({ books, title }) {
@@ -33,7 +62,7 @@ function BookList({ books, title }) {
   const styles = StyleSheet.create({
     list: {
       backgroundColor: colors.card,
-      paddingTop: (title === 'Reading' ? margin : 0),
+      paddingTop: title === 'Reading' ? margin : 0,
     },
     heading: {
       paddingTop: margin,
@@ -57,21 +86,13 @@ function BookList({ books, title }) {
     },
   });
 
-  // empty list placeholder
-  const EmptyList = () => (
-    <Pressable onPress={searchScreen} style={styles.emptyContainer}>
-      <AntDesign color={colors.text} size={27} name="book" />
-      <Text size={16} center style={styles.emptyText}>
-        {'I\'m lonely. \n Add something here.'}
-      </Text>
-    </Pressable>
-  );
-
   // render book list
   return (
     <View style={styles.list}>
       <View style={styles.heading}>
-        <Text size={17} bold>{title}</Text>
+        <Text size={17} bold>
+          {title}
+        </Text>
         <Text size={17}>{books.length}</Text>
       </View>
       <AnimatedFlatList
@@ -87,10 +108,32 @@ function BookList({ books, title }) {
             <Book book={item} index={index} scrollX={scrollX} />
           </Pressable>
         )}
-        ListEmptyComponent={<EmptyList />}
+        ListEmptyComponent={(
+          <EmptyList
+            onPress={searchScreen}
+            text="I'm lonely. Add something here."
+            styles={styles}
+            iconColor={colors.text}
+          />
+        )}
       />
     </View>
   );
 }
+
+BookList.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      bookId: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string.isRequired,
+      bookTitleBare: PropTypes.string.isRequired,
+      author: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+      avgRating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    }),
+  ).isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default React.memo(BookList);

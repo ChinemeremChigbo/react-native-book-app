@@ -1,14 +1,19 @@
 import React from 'react';
 import { View, Pressable } from 'react-native';
 import Animated, {
-  interpolate, withTiming,
-  useAnimatedStyle, useSharedValue, useAnimatedScrollHandler, useAnimatedProps,
+  interpolate,
+  withTiming,
+  useAnimatedStyle,
+  useSharedValue,
+  useAnimatedScrollHandler,
+  useAnimatedProps,
 } from 'react-native-reanimated';
 import { useTheme } from '@react-navigation/native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { AntDesign } from '@expo/vector-icons';
 import LottieView from 'lottie-react-native';
 import * as Haptics from 'expo-haptics';
+import PropTypes from 'prop-types';
 
 import Text from '../components/Text';
 import BookList from '../components/BookList';
@@ -20,7 +25,7 @@ const LottieViewAnimated = Animated.createAnimatedComponent(LottieView);
 
 // Get morning, afternoon, evening
 const getGreeting = () => {
-  const hours = (new Date()).getHours();
+  const hours = new Date().getHours();
   if (hours < 12) {
     return 'Good Morning';
   }
@@ -75,17 +80,55 @@ function BookListScreen({ navigation }) {
       alignItems: 'center',
       justifyContent: 'flex-end',
       backgroundColor: colors.background,
-      height: interpolate(scrollY.value, [-HEADER, 0], [HEADER * 2, HEADER], 'clamp'),
-      elevation: ios ? undefined : interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [0, 10], 'clamp'),
-      shadowOpacity: ios ? interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [0, 0.75], 'clamp') : undefined,
+      height: interpolate(
+        scrollY.value,
+        [-HEADER, 0],
+        [HEADER * 2, HEADER],
+        'clamp',
+      ),
+      elevation: ios
+        ? undefined
+        : interpolate(
+          scrollY.value,
+          [HEADER - navbar, HEADER - navbar + 30],
+          [0, 10],
+          'clamp',
+        ),
+      shadowOpacity: ios
+        ? interpolate(
+          scrollY.value,
+          [HEADER - navbar, HEADER - navbar + 30],
+          [0, 0.75],
+          'clamp',
+        )
+        : undefined,
       transform: [
-        { translateY: interpolate(scrollY.value, [0, HEADER - navbar], [0, -HEADER + navbar], 'clamp') },
+        {
+          translateY: interpolate(
+            scrollY.value,
+            [0, HEADER - navbar],
+            [0, -HEADER + navbar],
+            'clamp',
+          ),
+        },
       ],
     })),
     logo: useAnimatedStyle(() => ({
-      opacity: interpolate(scrollY.value, [0, HEADER - navbar], [1, 0], 'clamp'),
+      opacity: interpolate(
+        scrollY.value,
+        [0, HEADER - navbar],
+        [1, 0],
+        'clamp',
+      ),
       transform: [
-        { translateY: interpolate(scrollY.value, [-HEADER, 0], [-HEADER / 2, 0], 'clamp') },
+        {
+          translateY: interpolate(
+            scrollY.value,
+            [-HEADER, 0],
+            [-HEADER / 2, 0],
+            'clamp',
+          ),
+        },
       ],
     })),
     lottie: {
@@ -109,10 +152,30 @@ function BookListScreen({ navigation }) {
       alignItems: 'center',
       backgroundColor: colors.card,
       borderColor: colors.background,
-      marginBottom: interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [-25, 6], 'clamp'),
-      height: interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [50, 38], 'clamp'),
-      width: interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [width - margin * 2, width - margin], 'clamp'),
-      borderWidth: interpolate(scrollY.value, [HEADER - navbar, HEADER - navbar + 30], [1, 0], 'clamp'),
+      marginBottom: interpolate(
+        scrollY.value,
+        [HEADER - navbar, HEADER - navbar + 30],
+        [-25, 6],
+        'clamp',
+      ),
+      height: interpolate(
+        scrollY.value,
+        [HEADER - navbar, HEADER - navbar + 30],
+        [50, 38],
+        'clamp',
+      ),
+      width: interpolate(
+        scrollY.value,
+        [HEADER - navbar, HEADER - navbar + 30],
+        [width - margin * 2, width - margin],
+        'clamp',
+      ),
+      borderWidth: interpolate(
+        scrollY.value,
+        [HEADER - navbar, HEADER - navbar + 30],
+        [1, 0],
+        'clamp',
+      ),
     })),
     searchIcon: {
       width: 30,
@@ -173,5 +236,12 @@ function BookListScreen({ navigation }) {
     </Animated.View>
   );
 }
+
+BookListScreen.propTypes = {
+  navigation: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+    goBack: PropTypes.func,
+  }).isRequired,
+};
 
 export default React.memo(BookListScreen);

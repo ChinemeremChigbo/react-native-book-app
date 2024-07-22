@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 import { useTheme } from '@react-navigation/native';
 
 import Text from './Text';
@@ -33,5 +34,23 @@ function ThemedButton({
     </Pressable>
   );
 }
+
+ThemedButton.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  style: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
+  textStyle: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
+  children: PropTypes.node.isRequired,
+};
+
+ThemedButton.defaultProps = {
+  style: {},
+  textStyle: {},
+};
 
 export default React.memo(ThemedButton);

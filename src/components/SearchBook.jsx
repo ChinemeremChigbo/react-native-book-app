@@ -4,19 +4,46 @@ import { View, Image } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
 import { useTheme } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
+import PropTypes from 'prop-types';
 
 import Text from './Text';
 
 // star rating
 const Rating = React.memo(({ rating }) => (
-  <View style={{ width: 90, flexDirection: 'row', justifyContent: 'space-between' }}>
-    <FontAwesome size={16} name={rating < 0.5 ? 'star-o' : rating < 0.5 ? 'star-half-o' : 'star'} color="#f39c12" />
-    <FontAwesome size={16} name={rating < 1.5 ? 'star-o' : rating < 1.5 ? 'star-half-o' : 'star'} color="#f39c12" />
-    <FontAwesome size={16} name={rating < 2.5 ? 'star-o' : rating < 2.5 ? 'star-half-o' : 'star'} color="#f39c12" />
-    <FontAwesome size={16} name={rating < 3.5 ? 'star-o' : rating < 3.5 ? 'star-half-o' : 'star'} color="#f39c12" />
-    <FontAwesome size={16} name={rating < 4.5 ? 'star-o' : rating < 4.5 ? 'star-half-o' : 'star'} color="#f39c12" />
+  <View
+    style={{ width: 90, flexDirection: 'row', justifyContent: 'space-between' }}
+  >
+    <FontAwesome
+      size={16}
+      name={rating < 0.5 ? 'star-o' : rating < 0.5 ? 'star-half-o' : 'star'}
+      color="#f39c12"
+    />
+    <FontAwesome
+      size={16}
+      name={rating < 1.5 ? 'star-o' : rating < 1.5 ? 'star-half-o' : 'star'}
+      color="#f39c12"
+    />
+    <FontAwesome
+      size={16}
+      name={rating < 2.5 ? 'star-o' : rating < 2.5 ? 'star-half-o' : 'star'}
+      color="#f39c12"
+    />
+    <FontAwesome
+      size={16}
+      name={rating < 3.5 ? 'star-o' : rating < 3.5 ? 'star-half-o' : 'star'}
+      color="#f39c12"
+    />
+    <FontAwesome
+      size={16}
+      name={rating < 4.5 ? 'star-o' : rating < 4.5 ? 'star-half-o' : 'star'}
+      color="#f39c12"
+    />
   </View>
 ));
+
+Rating.propTypes = {
+  rating: PropTypes.string.isRequired,
+};
 
 // render search screen book
 function Book({ book, bookList }) {
@@ -70,13 +97,29 @@ function Book({ book, bookList }) {
         <Text bold size={17} numberOfLines={2}>
           {book.bookTitleBare}
         </Text>
-        <Text style={styles.bookAuthor}>
-          {book.author.name}
-        </Text>
+        <Text style={styles.bookAuthor}>{book.author.name}</Text>
         <Rating rating={book.avgRating} />
       </View>
     </View>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    bookId: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    bookTitleBare: PropTypes.string.isRequired,
+    author: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    avgRating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  }).isRequired,
+  bookList: PropTypes.arrayOf(
+    PropTypes.shape({
+      bookId: PropTypes.string.isRequired,
+      status: PropTypes.string,
+    }),
+  ).isRequired,
+};
 
 export default React.memo(Book);

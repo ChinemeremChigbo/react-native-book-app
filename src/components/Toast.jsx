@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import Animated, {
-  useAnimatedStyle, useSharedValue, withDelay, withTiming,
+  useAnimatedStyle,
+  useSharedValue,
+  withDelay,
+  withTiming,
 } from 'react-native-reanimated';
 import { atom, useAtom } from 'jotai';
 
@@ -39,9 +42,7 @@ export default function ToastContainer() {
       backgroundColor: colors[toast.type],
       borderBottomLeftRadius: 10,
       borderBottomRightRadius: 10,
-      transform: [
-        { translateY: show.value },
-      ],
+      transform: [{ translateY: show.value }],
     })),
     text: {
       fontSize: 15,

@@ -1,11 +1,15 @@
-/* eslint-disable no-param-reassign */
 import React, { useState, useEffect, useRef } from 'react';
 import {
   View, Image, StatusBar, Pressable, StyleSheet,
 } from 'react-native';
 import Animated, {
-  interpolate, withTiming, runOnJS,
-  useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, useAnimatedScrollHandler,
+  interpolate,
+  withTiming,
+  runOnJS,
+  useAnimatedGestureHandler,
+  useAnimatedStyle,
+  useSharedValue,
+  useAnimatedScrollHandler,
 } from 'react-native-reanimated';
 import { PanGestureHandler, ScrollView } from 'react-native-gesture-handler';
 import { useTheme, useIsFocused } from '@react-navigation/native';
@@ -13,6 +17,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { XMLParser } from 'fast-xml-parser';
 import * as Haptics from 'expo-haptics';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import Text from '../components/Text';
 import List from '../components/BookList';
@@ -96,7 +101,7 @@ function BookDetailsScreen({ navigation, route }) {
       x.value = ctx.startX + e.translationX;
 
       // closing screen? do it!
-      if ((moved.value >= 75 || ctx.velocity >= 750)) {
+      if (moved.value >= 75 || ctx.velocity >= 750) {
         if (closing.value === 0.9) runOnJS(goBack)();
         closing.value = withTiming(0.25);
       }
@@ -113,11 +118,14 @@ function BookDetailsScreen({ navigation, route }) {
   // Load book details
   useEffect(() => {
     // Related Books
-    axios.get(`https://www.goodreads.com/book/auto_complete?format=json&q=${book.author.name}`)
+    axios
+      .get(
+        `https://www.goodreads.com/book/auto_complete?format=json&q=${book.author.name}`,
+      )
       .then((resp) => {
         const bks = resp.data.filter((bk, i, arr) => {
           arr[i].imageUrl = bk.imageUrl.replace(/_..../, '_SY475_');
-          return (book.bookId !== bk.bookId);
+          return book.bookId !== bk.bookId;
         });
         setRelated(bks);
       })
@@ -126,7 +134,10 @@ function BookDetailsScreen({ navigation, route }) {
       });
 
     // Book details
-    axios.get(`https://www.goodreads.com/book/show/${book.bookId}.xml?key=Bi8vh08utrMY3HAqM9rkWA`)
+    axios
+      .get(
+        `https://www.goodreads.com/book/show/${book.bookId}.xml?key=Bi8vh08utrMY3HAqM9rkWA`,
+      )
       .then((resp) => {
         const data = parser.parse(resp.data);
         setFullBook(data?.GoodreadsResponse?.book);
@@ -136,7 +147,10 @@ function BookDetailsScreen({ navigation, route }) {
       });
 
     // Author details
-    axios.get(`https://www.goodreads.com/author/show.xml?key=Bi8vh08utrMY3HAqM9rkWA&id=${book.author.id}`)
+    axios
+      .get(
+        `https://www.goodreads.com/author/show.xml?key=Bi8vh08utrMY3HAqM9rkWA&id=${book.author.id}`,
+      )
       .then((resp) => {
         const data = parser.parse(resp.data);
         setAuthor(data?.GoodreadsResponse?.author);
@@ -156,7 +170,12 @@ function BookDetailsScreen({ navigation, route }) {
       transform: [
         { translateX: x.value },
         { translateY: y.value },
-        { scale: closing.value < 0.9 ? closing.value : interpolate(moved.value, [0, 75], [1, 0.9], 'clamp') },
+        {
+          scale:
+            closing.value < 0.9
+              ? closing.value
+              : interpolate(moved.value, [0, 75], [1, 0.9], 'clamp'),
+        },
       ],
       borderRadius: interpolate(moved.value, [0, 10], [0, 30], 'clamp'),
     })),
@@ -264,7 +283,12 @@ function BookDetailsScreen({ navigation, route }) {
         <Animated.View style={anims.screen}>
           {ios && <StatusBar hidden={useIsFocused()} animated />}
           <BookHeader scrollY={scrollY} book={book} />
-          <AntDesign size={27} name="close" onPress={goBack} style={styles.closeIcon} />
+          <AntDesign
+            size={27}
+            name="close"
+            onPress={goBack}
+            style={styles.closeIcon}
+          />
 
           <Animated.View style={anims.scrollView}>
             <AnimatedScrollView
@@ -274,38 +298,63 @@ function BookDetailsScreen({ navigation, route }) {
             >
               <View style={styles.detailsBox}>
                 <View style={styles.detailsRow}>
-                  <Text center size={13}>RATING</Text>
-                  <Text bold style={styles.subDetails}>{book.avgRating}</Text>
+                  <Text center size={13}>
+                    RATING
+                  </Text>
+                  <Text bold style={styles.subDetails}>
+                    {book.avgRating}
+                  </Text>
                 </View>
                 <View style={[styles.detailsRow, styles.detailsRowBorder]}>
-                  <Text center size={13}>PAGES</Text>
-                  <Text bold style={styles.subDetails}>{book.numPages}</Text>
+                  <Text center size={13}>
+                    PAGES
+                  </Text>
+                  <Text bold style={styles.subDetails}>
+                    {book.numPages != null ? book.numPages : 'N/A'}
+                  </Text>
                 </View>
                 <Pressable onPress={openSheet} style={styles.detailsRow}>
-                  <Text center size={13}>STATUS</Text>
-                  <Text bold color={colors.primary} style={styles.subDetails}>{item ? item.status : '-'}</Text>
+                  <Text center size={13}>
+                    STATUS
+                  </Text>
+                  <Text bold color={colors.primary} style={styles.subDetails}>
+                    {item ? item.status : '-'}
+                  </Text>
                 </Pressable>
               </View>
 
               <Animated.View style={anims.details}>
                 <View style={styles.authorBox}>
-                  <Image source={{ uri: author?.image_url }} style={styles.authorImage} />
+                  <Image
+                    source={{ uri: author?.image_url }}
+                    style={styles.authorImage}
+                  />
                   <View>
-                    <Text bold size={17}>{author?.name || '...'}</Text>
+                    <Text bold size={17}>
+                      {author?.name || '...'}
+                    </Text>
                     <Text numberOfLines={2} style={styles.authorDetails}>
-                      {author?.about.replace(/(<([^>]+)>)/ig, '')}
+                      {author?.about.replace(/(<([^>]+)>)/gi, '')}
                     </Text>
                   </View>
                 </View>
                 <Text size={16} numberOfLines={10} style={styles.aboutBook}>
-                  {fullBook?.description.replace(/(<([^>]+)>)/ig, ' ')}
+                  {fullBook?.description.replace(/(<([^>]+)>)/gi, ' ')}
                 </Text>
-                <List books={related} title="Related Books" navigation={navigation} />
+                <List
+                  books={related}
+                  title="Related Books"
+                  navigation={navigation}
+                />
               </Animated.View>
             </AnimatedScrollView>
 
             <Button onPress={openSheet} style={styles.addButton}>
-              <AntDesign size={21} name={getIcon(item?.status)} style={styles.addIcon} />
+              <AntDesign
+                size={21}
+                name={getIcon(item?.status)}
+                style={styles.addIcon}
+              />
             </Button>
           </Animated.View>
         </Animated.View>
@@ -313,5 +362,24 @@ function BookDetailsScreen({ navigation, route }) {
     </>
   );
 }
+
+BookDetailsScreen.propTypes = {
+  navigation: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+  route: PropTypes.shape({
+    params: PropTypes.shape({
+      book: PropTypes.shape({
+        bookId: PropTypes.string.isRequired,
+        author: PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        }).isRequired,
+        avgRating: PropTypes.string.isRequired,
+        numPages: PropTypes.number,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default React.memo(BookDetailsScreen);

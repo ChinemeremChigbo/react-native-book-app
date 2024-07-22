@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
+import PropTypes from 'prop-types'; // Add this line
 
 import Text from '../components/Text';
 import Button from '../components/Button';
@@ -42,7 +43,11 @@ function Books({ navigation }) {
   });
 
   return (
-    <ScrollView style={styles.screen} centerContent contentContainerStyle={styles.scroll}>
+    <ScrollView
+      style={styles.screen}
+      centerContent
+      contentContainerStyle={styles.scroll}
+    >
       <LottieView autoPlay loop style={styles.lottie} source={lottie} />
       <Text bold center style={styles.title}>
         {'Modern \n Book List'}
@@ -50,11 +55,15 @@ function Books({ navigation }) {
       <Text center style={styles.subTitle}>
         Its never been easier to organize your reading list in one place.
       </Text>
-      <Button onPress={() => navigation.push('BookList')}>
-        Get Started
-      </Button>
+      <Button onPress={() => navigation.push('BookList')}>Get Started</Button>
     </ScrollView>
   );
 }
+
+Books.propTypes = {
+  navigation: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default React.memo(Books);

@@ -1,9 +1,12 @@
-/* eslint-disable no-param-reassign */
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
 import { SharedElement } from 'react-navigation-shared-element';
 import { useTheme } from '@react-navigation/native';
+import PropTypes from 'prop-types';
 
 import Text from './Text';
 
@@ -27,9 +30,21 @@ function BookHeader({ scrollY, book }) {
       justifyContent: 'center',
       shadowOffset: { height: 2 },
       backgroundColor: colors.card,
-      shadowOpacity: interpolate(scrollY.value, [HEADER - navbar - 20, HEADER - navbar], [0, 0.25], 'clamp'),
+      shadowOpacity: interpolate(
+        scrollY.value,
+        [HEADER - navbar - 20, HEADER - navbar],
+        [0, 0.25],
+        'clamp',
+      ),
       transform: [
-        { translateY: interpolate(scrollY.value, [0, HEADER - navbar], [0, -HEADER + navbar], 'clamp') },
+        {
+          translateY: interpolate(
+            scrollY.value,
+            [0, HEADER - navbar],
+            [0, -HEADER + navbar],
+            'clamp',
+          ),
+        },
       ],
     })),
     bg: useAnimatedStyle(() => ({
@@ -42,10 +57,22 @@ function BookHeader({ scrollY, book }) {
     })),
     cover: useAnimatedStyle(() => ({
       alignItems: 'center',
-      opacity: interpolate(scrollY.value, [HEADER - navbar - 20, HEADER - navbar], [1, 0], 'clamp'),
+      opacity: interpolate(
+        scrollY.value,
+        [HEADER - navbar - 20, HEADER - navbar],
+        [1, 0],
+        'clamp',
+      ),
       transform: [
         { scale: interpolate(scrollY.value, [-100, 0], [1.1, 1], 'clamp') },
-        { translateY: interpolate(scrollY.value, [0, HEADER / 6], [0, HEADER / 6], 'clamp') },
+        {
+          translateY: interpolate(
+            scrollY.value,
+            [0, HEADER / 6],
+            [0, HEADER / 6],
+            'clamp',
+          ),
+        },
       ],
     })),
     title: useAnimatedStyle(() => ({
@@ -63,7 +90,12 @@ function BookHeader({ scrollY, book }) {
       alignItems: 'center',
       justifyContent: 'center',
       paddingHorizontal: margin,
-      opacity: interpolate(scrollY.value, [HEADER - navbar - 20, HEADER - navbar], [0, 1], 'clamp'),
+      opacity: interpolate(
+        scrollY.value,
+        [HEADER - navbar - 20, HEADER - navbar],
+        [0, 1],
+        'clamp',
+      ),
     })),
   };
 
@@ -88,7 +120,11 @@ function BookHeader({ scrollY, book }) {
 
   return (
     <Animated.View style={anims.header}>
-      <Animated.Image blurRadius={15} style={anims.bg} source={{ uri: book.imageUrl }} />
+      <Animated.Image
+        blurRadius={15}
+        style={anims.bg}
+        source={{ uri: book.imageUrl }}
+      />
 
       <Animated.View style={anims.cover}>
         <SharedElement id={book.bookId}>
@@ -99,7 +135,9 @@ function BookHeader({ scrollY, book }) {
       </Animated.View>
 
       <Animated.View style={anims.title}>
-        <Text bold center size={21} numberOfLines={2}>{book.bookTitleBare}</Text>
+        <Text bold center size={21} numberOfLines={2}>
+          {book.bookTitleBare}
+        </Text>
         <Text size={17} style={styles.author}>{`by ${book.author.name}`}</Text>
       </Animated.View>
 
@@ -111,5 +149,19 @@ function BookHeader({ scrollY, book }) {
     </Animated.View>
   );
 }
+
+BookHeader.propTypes = {
+  scrollY: PropTypes.shape({
+    value: PropTypes.number.isRequired,
+  }).isRequired,
+  book: PropTypes.shape({
+    imageUrl: PropTypes.string.isRequired,
+    bookId: PropTypes.string.isRequired,
+    bookTitleBare: PropTypes.string.isRequired,
+    author: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default React.memo(BookHeader);

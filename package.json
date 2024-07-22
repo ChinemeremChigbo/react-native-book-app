@@ -22,6 +22,7 @@
     "jotai": "^1.6.2",
     "lottie-ios": "^3.2.3",
     "lottie-react-native": "5.1.4",
+    "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",

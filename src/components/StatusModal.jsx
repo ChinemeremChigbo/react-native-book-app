@@ -108,28 +108,59 @@ export default function StatusModal() {
           <Text bold size={20}>
             {item?.status ? 'Update List' : 'Add to List'}
           </Text>
-          <Text bold onPress={closeSheet}>Done</Text>
+          <Text bold onPress={closeSheet}>
+            Done
+          </Text>
         </View>
         <Text numberOfLines={1} style={[styles.bookTitle, styles.marginB]}>
           {item?.bookTitleBare}
         </Text>
-        <Pressable onPress={() => updateList('Reading')} style={[styles.flexRow, styles.marginB]}>
+        <Pressable
+          onPress={() => updateList('Reading')}
+          style={[styles.flexRow, styles.marginB]}
+        >
           <AntDesign name="rocket1" style={styles.iconLeft} />
-          <Text size={17} style={styles.statusText}>Reading</Text>
-          <AntDesign size={21} color={colors.text} name={item?.status === 'Reading' ? 'check' : ''} />
+          <Text size={17} style={styles.statusText}>
+            Reading
+          </Text>
+          <AntDesign
+            size={21}
+            color={colors.text}
+            name={item?.status === 'Reading' ? 'check' : ''}
+          />
         </Pressable>
-        <Pressable onPress={() => updateList('Completed')} style={[styles.flexRow, styles.marginB]}>
+        <Pressable
+          onPress={() => updateList('Completed')}
+          style={[styles.flexRow, styles.marginB]}
+        >
           <AntDesign name="Trophy" style={styles.iconLeft} />
-          <Text size={17} style={styles.statusText}>Completed</Text>
-          <AntDesign size={21} color={colors.text} name={item?.status === 'Completed' ? 'check' : ''} />
+          <Text size={17} style={styles.statusText}>
+            Completed
+          </Text>
+          <AntDesign
+            size={21}
+            color={colors.text}
+            name={item?.status === 'Completed' ? 'check' : ''}
+          />
         </Pressable>
-        <Pressable onPress={() => updateList('Wishlist')} style={[styles.flexRow, styles.marginB]}>
+        <Pressable
+          onPress={() => updateList('Wishlist')}
+          style={[styles.flexRow, styles.marginB]}
+        >
           <AntDesign name="book" style={styles.iconLeft} />
-          <Text size={17} style={styles.statusText}>Wishlist</Text>
-          <AntDesign size={21} color={colors.text} name={item?.status === 'Wishlist' ? 'check' : ''} />
+          <Text size={17} style={styles.statusText}>
+            Wishlist
+          </Text>
+          <AntDesign
+            size={21}
+            color={colors.text}
+            name={item?.status === 'Wishlist' ? 'check' : ''}
+          />
         </Pressable>
         <Pressable onPress={() => updateList('Remove')}>
-          <Text center size={16} color="#ff3b30">Remove</Text>
+          <Text center size={16} color="#ff3b30">
+            Remove
+          </Text>
         </Pressable>
       </View>
     </Modalize>

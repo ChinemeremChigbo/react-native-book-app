@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View, TextInput, Alert, StyleSheet, Pressable, Keyboard,
+  View,
+  TextInput,
+  Alert,
+  StyleSheet,
+  Pressable,
+  Keyboard,
 } from 'react-native';
 import Animated, {
-  interpolate, Extrapolate, withTiming, useSharedValue, useAnimatedScrollHandler, useAnimatedStyle,
+  interpolate,
+  Extrapolate,
+  withTiming,
+  useSharedValue,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
 } from 'react-native-reanimated';
 import { SharedElement } from 'react-navigation-shared-element';
 import { useTheme } from '@react-navigation/native';
@@ -11,6 +21,7 @@ import { AntDesign } from '@expo/vector-icons';
 import LottieView from 'lottie-react-native';
 import * as Haptics from 'expo-haptics';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import Text from '../components/Text';
 import Book from '../components/SearchBook';
@@ -18,6 +29,40 @@ import { useBooksState } from '../BookStore';
 import { setModal } from '../components/StatusModal';
 
 const stack = require('../anims/stack.json');
+
+function PlaceHolder({ styles }) {
+  return (
+    <View style={styles.placeholderBox}>
+      <LottieView
+        autoPlay
+        loop={false}
+        speed={0.8}
+        source={stack}
+        style={styles.placeholderImg}
+      />
+      <Text center style={styles.placeholderText}>
+        You can search by book title, author, keywords etc...
+      </Text>
+    </View>
+  );
+}
+
+PlaceHolder.propTypes = {
+  styles: PropTypes.shape({
+    placeholderBox: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.shape({}),
+    ]),
+    placeholderImg: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.shape({}),
+    ]),
+    placeholderText: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.shape({}),
+    ]),
+  }).isRequired,
+};
 
 // Default screen
 function BookSearchScreen({ navigation }) {
@@ -64,7 +109,10 @@ function BookSearchScreen({ navigation }) {
   // search query
   useEffect(() => {
     if (query.length > 0) {
-      axios.get(`https://www.goodreads.com/book/auto_complete?format=json&q=${query}`)
+      axios
+        .get(
+          `https://www.goodreads.com/book/auto_complete?format=json&q=${query}`,
+        )
         .then((resp) => {
           const bks = resp.data.map((book) => ({
             ...book,
@@ -90,12 +138,24 @@ function BookSearchScreen({ navigation }) {
       paddingHorizontal: margin / 2,
       justifyContent: 'space-between',
       backgroundColor: colors.background,
-      shadowOpacity: interpolate(scrollY.value, [0, 20], [0, 0.75], Extrapolate.CLAMP),
+      shadowOpacity: interpolate(
+        scrollY.value,
+        [0, 20],
+        [0, 0.75],
+        Extrapolate.CLAMP,
+      ),
     })),
     scrollView: useAnimatedStyle(() => ({
       opacity: interpolate(loaded.value, [0, 1], [0, 1], Extrapolate.CLAMP),
       transform: [
-        { translateY: interpolate(loaded.value, [0, 1], [50, 0], Extrapolate.CLAMP) },
+        {
+          translateY: interpolate(
+            loaded.value,
+            [0, 1],
+            [50, 0],
+            Extrapolate.CLAMP,
+          ),
+        },
       ],
     })),
   };
@@ -156,22 +216,6 @@ function BookSearchScreen({ navigation }) {
     },
   });
 
-  // empty screen placeholders
-  const PlaceHolder = () => (
-    <View style={styles.placeholderBox}>
-      <LottieView
-        autoPlay
-        loop={false}
-        speed={0.8}
-        source={stack}
-        style={styles.placeholderImg}
-      />
-      <Text center style={styles.placeholderText}>
-        You can search by book title, author, keywords etc...
-      </Text>
-    </View>
-  );
-
   // render search page
   return (
     <View onLayout={onLayout} style={styles.screen}>
@@ -193,7 +237,9 @@ function BookSearchScreen({ navigation }) {
           </View>
         </SharedElement>
         <Pressable onPress={goBack}>
-          <Text bold style={styles.saveButton}>Done</Text>
+          <Text bold style={styles.saveButton}>
+            Done
+          </Text>
         </Pressable>
       </Animated.View>
 
@@ -205,7 +251,7 @@ function BookSearchScreen({ navigation }) {
         contentContainerStyle={styles.scrollContainer}
         style={anims.scrollView}
       >
-        {!books.length && <PlaceHolder />}
+        {!books.length && <PlaceHolder styles={styles} />}
         {books.map((book) => (
           <Pressable
             key={book.bookId}
@@ -219,5 +265,12 @@ function BookSearchScreen({ navigation }) {
     </View>
   );
 }
+
+BookSearchScreen.propTypes = {
+  navigation: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default React.memo(BookSearchScreen);

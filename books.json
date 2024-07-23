@@ -1,0 +1,632 @@
+[
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1164045516i/3590._SY475__.jpg",
+        "bookId": "3590",
+        "workId": "1222101",
+        "bookUrl": "/book/show/3590.The_Adventures_of_Sherlock_Holmes",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "kIMZRv9q8A",
+        "rank": 1,
+        "title": "The Adventures of Sherlock Holmes (Sherlock Holmes, #3)",
+        "bookTitleBare": "The Adventures of Sherlock Holmes",
+        "numPages": 389,
+        "avgRating": "4.30",
+        "ratingsCount": 303905,
+        "status": "Completed",
+        "author": {
+            "id": 2448,
+            "name": "Arthur Conan Doyle",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/2448.Arthur_Conan_Doyle",
+            "worksListUrl": "https://www.goodreads.com/author/list/2448.Arthur_Conan_Doyle"
+        },
+        "kcrPreviewUrl": null,
+        "description": {
+            "html": "<i>The Adventures of Sherlock Holmes</i> is the series of short stories that made the fortunes of the Strand magazine, in which they were first published, and won immense popularity …",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/3590.The_Adventures_of_Sherlock_Holmes"
+        },
+        "audio": "https://archive.org/download/adventures_sherlock_holmes_rg_librivox/adventuresholmes_01_doyle.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327878125i/52357._SY475__.jpg",
+        "bookId": "52357",
+        "workId": "189503",
+        "bookUrl": "/book/show/52357.Beowulf",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "4pWBmnAg57",
+        "rank": 1,
+        "title": "Beowulf",
+        "bookTitleBare": "Beowulf",
+        "numPages": 256,
+        "avgRating": "3.49",
+        "ratingsCount": 319262,
+        "status": "Wishlist",
+        "author": {
+            "id": 4699102,
+            "name": "Unknown",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/4699102.Unknown",
+            "worksListUrl": "https://www.goodreads.com/author/list/4699102.Unknown"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0BFQRKXQP&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "Composed toward the end of the first millennium, Beowulf is the elegiac narrative of the adventures of Beowulf, a Scandinavian hero who saves the Danes from the seemingly invi…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/52357.Beowulf"
+        },
+        "audio": "https://archive.org/download/beowulf/beowulf_01_gummere.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1629680008i/18135._SY475__.jpg",
+        "bookId": "18135",
+        "workId": "3349450",
+        "bookUrl": "/book/show/18135.Romeo_and_Juliet",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "IYAF7iKnDN",
+        "rank": 1,
+        "title": "Romeo and Juliet",
+        "bookTitleBare": "Romeo and Juliet",
+        "numPages": 281,
+        "avgRating": "3.74",
+        "ratingsCount": 2636686,
+        "status": "Reading",
+        "author": {
+            "id": 947,
+            "name": "William Shakespeare",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/947.William_Shakespeare",
+            "worksListUrl": "https://www.goodreads.com/author/list/947.William_Shakespeare"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0C3RW51DX&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "In <em>Romeo and Juliet</em>, Shakespeare creates a violent world, in which two young people fall in love. It is not simply that their families disapprove; the Montagues and the Capule…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/18135.Romeo_and_Juliet"
+        },
+        "audio": "https://archive.org/download/romeo_and_juliet_librivox/Romeo_and_Juliet_Act_1.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630683326i/10534._SY475__.jpg",
+        "bookId": "10534",
+        "workId": "3200649",
+        "bookUrl": "/book/show/10534.The_Art_of_War",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "neyX6HoALI",
+        "rank": 2,
+        "title": "The Art of War",
+        "bookTitleBare": "The Art of War",
+        "numPages": 170,
+        "avgRating": "3.96",
+        "ratingsCount": 500778,
+        "status": "Completed",
+        "author": {
+            "id": 1771,
+            "name": "Sun Tzu",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1771.Sun_Tzu",
+            "worksListUrl": "https://www.goodreads.com/author/list/1771.Sun_Tzu"
+        },
+        "kcrPreviewUrl": null,
+        "description": {
+            "html": "Twenty-Five Hundred years ago, Sun Tzu wrote this classic book of military strategy based on Chinese warfare and military thought. Since that time, all levels of military have…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/10534.The_Art_of_War"
+        },
+        "audio": "https://archive.org/download/art_of_war_librivox/art_of_war_01-02_sun_tzu.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630549581i/164531._SY475__.jpg",
+        "bookId": "164531",
+        "workId": "2880113",
+        "bookUrl": "/book/show/164531.The_Railway_Children",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "OegXLdVyPP",
+        "rank": 1,
+        "title": "The Railway Children",
+        "bookTitleBare": "The Railway Children",
+        "numPages": 188,
+        "avgRating": "4.02",
+        "ratingsCount": 60610,
+        "status": "Wishlist",
+        "author": {
+            "id": 7935185,
+            "name": "E. Nesbit",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/7935185.E_Nesbit",
+            "worksListUrl": "https://www.goodreads.com/author/list/7935185.E_Nesbit"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0B3RQDY78&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "In this much-loved children&apos;s classic first published in 1906, the comfortable lives of three well-mannered siblings are greatly altered when, one evening, two men arrive at t…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/164531.The_Railway_Children"
+        },
+        "audio": "https://archive.org/download/railway_children_librivox/railwaychildren_01_nesbit.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387151694i/17245._SY475__.jpg",
+        "bookId": "17245",
+        "workId": "3165724",
+        "bookUrl": "/book/show/17245.Dracula",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "0ncgfKp2cc",
+        "rank": 1,
+        "title": "Dracula",
+        "bookTitleBare": "Dracula",
+        "numPages": 488,
+        "avgRating": "4.02",
+        "ratingsCount": 1297003,
+        "status": "Wishlist",
+        "author": {
+            "id": 6988,
+            "name": "Bram Stoker",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/6988.Bram_Stoker",
+            "worksListUrl": "https://www.goodreads.com/author/list/6988.Bram_Stoker"
+        },
+        "kcrPreviewUrl": null,
+        "description": {
+            "html": "<i>You can find an alternative cover edition for this ISBN <a href='https://www.goodreads.com/book/show/33805355-dracula' rel='nofollow noopener'>here</a> and <a href='https://www.goodreads.com/book/show/34810834-dracula' rel='nofollow noopener'>here</a>.</i><br/><br/>When Jonathan Harker visits Transylvania to help Count Dracula with the purchase of a London house, he ma…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/17245.Dracula"
+        },
+        "audio": "https://archive.org/download/dracula_1006_librivox/dracula_01_stoker.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1337714526i/34268._SY475__.jpg",
+        "bookId": "34268",
+        "workId": "1358908",
+        "bookUrl": "/book/show/34268.Peter_Pan",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "Q5GQnsmcZJ",
+        "rank": 1,
+        "title": "Peter Pan",
+        "bookTitleBare": "Peter Pan",
+        "numPages": 176,
+        "avgRating": "4.04",
+        "ratingsCount": 352747,
+        "status": "Completed",
+        "author": {
+            "id": 5255014,
+            "name": "J.M. Barrie",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/5255014.J_M_Barrie",
+            "worksListUrl": "https://www.goodreads.com/author/list/5255014.J_M_Barrie"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B003IKMOH6&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "This Blampied edition is considered to be a first edition that was rereleased as a fund raiser for the great Oromond street hospital for sick children in London. this edition …",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/34268.Peter_Pan"
+        },
+        "audio": "https://archive.org/download/peter_pan_0707_librivox/peterpan_01_barrie.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344922523i/1953._SY475__.jpg",
+        "bookId": "1953",
+        "workId": "2956372",
+        "bookUrl": "/book/show/1953.A_Tale_of_Two_Cities",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "lIfCQyhmbi",
+        "rank": 1,
+        "title": "A Tale of Two Cities",
+        "bookTitleBare": "A Tale of Two Cities",
+        "numPages": 489,
+        "avgRating": "3.87",
+        "ratingsCount": 957817,
+        "status": "Wishlist",
+        "author": {
+            "id": 239579,
+            "name": "Charles Dickens",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/239579.Charles_Dickens",
+            "worksListUrl": "https://www.goodreads.com/author/list/239579.Charles_Dickens"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B093Z3Z66T&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>A Tale of Two Cities</i> is Charles Dickens’s great historical novel, set against the violent upheaval of the French Revolution. The most famous and perhaps the most popular of hi…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/1953.A_Tale_of_Two_Cities"
+        },
+        "audio": "https://archive.org/download/tale_two_cities_librivox/tale_of_two_cities_01_dickens.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398003737i/236093._SY475__.jpg",
+        "bookId": "236093",
+        "workId": "1993810",
+        "bookUrl": "/book/show/236093.The_Wonderful_Wizard_of_Oz",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "Vt3T4AArjw",
+        "rank": 1,
+        "title": "The Wonderful Wizard of Oz (Oz, #1)",
+        "bookTitleBare": "The Wonderful Wizard of Oz",
+        "numPages": 154,
+        "avgRating": "4.00",
+        "ratingsCount": 459463,
+        "status": "Completed",
+        "author": {
+            "id": 3242,
+            "name": "L. Frank Baum",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/3242.L_Frank_Baum",
+            "worksListUrl": "https://www.goodreads.com/author/list/3242.L_Frank_Baum"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B08DM92NM8&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>Come along, Toto, she said. We will go to the Emerald City and ask the Great Oz how to get back to Kansas again.</i> <br/><p>Swept away from her home in Kansas by a tornado, Dorothy and h…</p>",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/236093.The_Wonderful_Wizard_of_Oz"
+        },
+        "audio": "https://archive.org/download/wizard_of_oz/wizardofoz_00_baum.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711957706i/1381._SY475__.jpg",
+        "bookId": "1381",
+        "workId": "3356006",
+        "bookUrl": "/book/show/1381.The_Odyssey",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "H75lG0jvRx",
+        "rank": 1,
+        "title": "The Odyssey",
+        "bookTitleBare": "The Odyssey",
+        "numPages": 541,
+        "avgRating": "3.81",
+        "ratingsCount": 1099813,
+        "status": "Reading",
+        "author": {
+            "id": 903,
+            "name": "Homer",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/903.Homer",
+            "worksListUrl": "https://www.goodreads.com/author/list/903.Homer"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B000OCXGRS&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>Sing to me of the man, Muse, the man of twists and turns<br/>driven time and again off course, once he had plundered<br/>the hallowed heights of Troy.</i><br/><br/>So begins Robert Fagles&apos; magnificen…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/1381.The_Odyssey"
+        },
+        "audio": "https://archive.org/download/odyssey_butler_librivox/odyssey_01_homer_butler.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657540227i/6656._SY475__.jpg",
+        "bookId": "6656",
+        "workId": "809248",
+        "bookUrl": "/book/show/6656.The_Divine_Comedy",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "AN9VuQs91u",
+        "rank": 1,
+        "title": "The Divine Comedy",
+        "bookTitleBare": "The Divine Comedy",
+        "numPages": 798,
+        "avgRating": "4.08",
+        "ratingsCount": 155611,
+        "status": "Completed",
+        "author": {
+            "id": 5031312,
+            "name": "Dante Alighieri",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/5031312.Dante_Alighieri",
+            "worksListUrl": "https://www.goodreads.com/author/list/5031312.Dante_Alighieri"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0BRL87G6P&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<b>This Everyman’s Library edition–containing in one volume all three cantos, Inferno, <i>Purgatorio,</i> and <i>Paradiso</i>–includes an introduction by Nobel Prize—winning poet Eugenio Monta…</b>",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/6656.The_Divine_Comedy"
+        },
+        "audio": "https://archive.org/download/divine_comedy_librivox/divinecomedy_longfellow_01_dante.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327940656i/153747._SY475__.jpg",
+        "bookId": "153747",
+        "workId": "2409320",
+        "bookUrl": "/book/show/153747.Moby_Dick_or_The_Whale",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "QVL9J64v9J",
+        "rank": 1,
+        "title": "Moby-Dick or, The Whale",
+        "bookTitleBare": "Moby-Dick or, The Whale",
+        "numPages": 720,
+        "avgRating": "3.55",
+        "ratingsCount": 568988,
+        "status": "Completed",
+        "author": {
+            "id": 1624,
+            "name": "Herman Melville",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1624.Herman_Melville",
+            "worksListUrl": "https://www.goodreads.com/author/list/1624.Herman_Melville"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B018IMBB5E&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>&quot;It is the horrible texture of a fabric that should be woven of ships&apos; cables and hawsers. A Polar wind blows through it, and birds of prey hover over it.&quot;</i> <br/><br/>So Melville wrote o…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/153747.Moby_Dick_or_The_Whale"
+        },
+        "audio": "https://archive.org/download/moby_dick_librivox/mobydick_000_melville.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557343311i/10210._SY475__.jpg",
+        "bookId": "10210",
+        "workId": "2977639",
+        "bookUrl": "/book/show/10210.Jane_Eyre",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "D1XmhyPHXP",
+        "rank": 1,
+        "title": "Jane Eyre",
+        "bookTitleBare": "Jane Eyre",
+        "numPages": 532,
+        "avgRating": "4.15",
+        "ratingsCount": 2119308,
+        "status": "Completed",
+        "author": {
+            "id": 1036615,
+            "name": "Charlotte Brontë",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1036615.Charlotte_Bront_",
+            "worksListUrl": "https://www.goodreads.com/author/list/1036615.Charlotte_Bront_"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B06Y3CJLR7&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>Alternate editions can be found <a href='https://www.goodreads.com/book/show/59701670' rel='nofollow noopener'>here</a> and <a href='https://www.goodreads.com/book/show/11016' rel='nofollow noopener'>here</a></i>.<br/><br/><b>A gothic masterpiece of tempestuous passions and dark secrets, Charlotte Brontë&apos;s <i>Jane Eyre</i> is edited with an introduction and no…</b>",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/10210.Jane_Eyre"
+        },
+        "audio": "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885._SY475__.jpg",
+        "bookId": "1885",
+        "workId": "3060926",
+        "bookUrl": "/book/show/1885.Pride_and_Prejudice",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "ftol5FS3Q0",
+        "rank": 1,
+        "title": "Pride and Prejudice",
+        "bookTitleBare": "Pride and Prejudice",
+        "numPages": 279,
+        "avgRating": "4.29",
+        "ratingsCount": 4329956,
+        "status": "Wishlist",
+        "author": {
+            "id": 1265,
+            "name": "Jane Austen",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1265.Jane_Austen",
+            "worksListUrl": "https://www.goodreads.com/author/list/1265.Jane_Austen"
+        },
+        "kcrPreviewUrl": null,
+        "description": {
+            "html": "Since its immediate success in 1813, <i>Pride and Prejudice</i> has remained one of the most popular novels in the English language. Jane Austen called this brilliant work &quot;her own d…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/1885.Pride_and_Prejudice"
+        },
+        "audio": "https://archive.org/download/beowulf_te_librivox/beowulf_01_gummerre_128kb.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327873635i/2998._SY475__.jpg",
+        "bookId": "2998",
+        "workId": "3186437",
+        "bookUrl": "/book/show/2998.The_Secret_Garden",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "G0WPpoTPrJ",
+        "rank": 1,
+        "title": "The Secret Garden",
+        "bookTitleBare": "The Secret Garden",
+        "numPages": 331,
+        "avgRating": "4.16",
+        "ratingsCount": 1193049,
+        "status": "Reading",
+        "author": {
+            "id": 2041,
+            "name": "Frances Hodgson Burnett",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/2041.Frances_Hodgson_Burnett",
+            "worksListUrl": "https://www.goodreads.com/author/list/2041.Frances_Hodgson_Burnett"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B095HZKHRP&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "In a house full of sadness and secrets, can young, orphaned Mary find happiness?<br/><br/>Mary Lennox, a spoiled, ill-tempered, and unhealthy child, comes to live with her reclusive unc…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/2998.The_Secret_Garden"
+        },
+        "audio": "https://archive.org/download/secret_garden_librivox/secretgarden_01_burnett.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546096879i/2956._SY475__.jpg",
+        "bookId": "2956",
+        "workId": "1835605",
+        "bookUrl": "/book/show/2956.The_Adventures_of_Huckleberry_Finn",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "Fzc39x2LvY",
+        "rank": 1,
+        "title": "The Adventures of Huckleberry Finn",
+        "bookTitleBare": "The Adventures of Huckleberry Finn",
+        "numPages": 327,
+        "avgRating": "3.83",
+        "ratingsCount": 1275024,
+        "status": "Wishlist",
+        "author": {
+            "id": 1244,
+            "name": "Mark Twain",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1244.Mark_Twain",
+            "worksListUrl": "https://www.goodreads.com/author/list/1244.Mark_Twain"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B00GYURVIE&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "A nineteenth-century boy from a Mississippi River town recounts his adventures as he travels down the river with a runaway slave, encountering a family involved in a feud, two…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/2956.The_Adventures_of_Huckleberry_Finn"
+        },
+        "audio": "https://archive.org/download/huckleberry_mfs_librivox/huckleberry_finn_01_twain_128kb.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1373627931i/6969._SY475__.jpg",
+        "bookId": "6969",
+        "workId": "3360164",
+        "bookUrl": "/book/show/6969.Emma",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "YPiBnqcc7u",
+        "rank": 1,
+        "title": "Emma",
+        "bookTitleBare": "Emma",
+        "numPages": 474,
+        "avgRating": "4.05",
+        "ratingsCount": 899413,
+        "status": "Reading",
+        "author": {
+            "id": 1265,
+            "name": "Jane Austen",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/1265.Jane_Austen",
+            "worksListUrl": "https://www.goodreads.com/author/list/1265.Jane_Austen"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0C1KX3MQQ&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<i>The newest edition is <a href='https://www.goodreads.com/book/show/193940991' rel='nofollow noopener'>here</a>. Another alternate cover can be found <a href='https://www.goodreads.com/book/show/27274542' rel='nofollow noopener'>here</a>.</i><br/><br/>Emma Woodhouse is one of Austen&apos;s most captivating and vivid characters. Beautiful, spoilt, vain and irre…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/6969.Emma"
+        },
+        "audio": "https://archive.org/download/emma_solo_librivox/emma_01_01_austen.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631687432i/2623._SY475__.jpg",
+        "bookId": "2623",
+        "workId": "2612809",
+        "bookUrl": "/book/show/2623.Great_Expectations",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "VLU5RW4t23",
+        "rank": 1,
+        "title": "Great Expectations",
+        "bookTitleBare": "Great Expectations",
+        "numPages": 544,
+        "avgRating": "3.79",
+        "ratingsCount": 813520,
+        "status": "Wishlist",
+        "author": {
+            "id": 239579,
+            "name": "Charles Dickens",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/239579.Charles_Dickens",
+            "worksListUrl": "https://www.goodreads.com/author/list/239579.Charles_Dickens"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B007679L8M&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "Great Expectations charts the progress of Pip from childhood through often painful experiences to adulthood, as he moves from the Kent marshes to busy, commercial London, enco…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/2623.Great_Expectations"
+        },
+        "audio": "https://archive.org/download/great_expectations_mfs_0812_librivox/greatexpectations_01_dickens.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1647953436i/60671823._SY475__.jpg",
+        "bookId": "60671823",
+        "workId": "55548884",
+        "bookUrl": "/book/show/60671823-alice-s-adventures-in-wonderland",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "Qbr0TBiLh6",
+        "rank": 2,
+        "title": "Alice's Adventures in Wonderland",
+        "bookTitleBare": "Alice's Adventures in Wonderland",
+        "numPages": 320,
+        "avgRating": "4.00",
+        "ratingsCount": 392273,
+        "status": "Completed",
+        "author": {
+            "id": 8164,
+            "name": "Lewis Carroll",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/8164.Lewis_Carroll",
+            "worksListUrl": "https://www.goodreads.com/author/list/8164.Lewis_Carroll"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B083KB53C9&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "<b>Chris Riddell&apos;s brilliant new full-colour illustrated <i>Alice’s Adventures in Wonderland</i> in a sumptuous hardback and jacketed edition. A perfect gift for families, children and …</b>",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/60671823-alice-s-adventures-in-wonderland"
+        },
+        "audio": "https://archive.org/download/alices_adventures_1003/alices_adventures_01_carroll.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385171459i/62111._SY475__.jpg",
+        "bookId": "62111",
+        "workId": "2441994",
+        "bookUrl": "/book/show/62111.The_Swiss_Family_Robinson",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "Bcjv4iakOt",
+        "rank": 1,
+        "title": "The Swiss Family Robinson",
+        "bookTitleBare": "The Swiss Family Robinson",
+        "numPages": 345,
+        "avgRating": "3.91",
+        "ratingsCount": 106709,
+        "status": "Completed",
+        "author": {
+            "id": 2897630,
+            "name": "Johann David Wyss",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/2897630.Johann_David_Wyss",
+            "worksListUrl": "https://www.goodreads.com/author/list/2897630.Johann_David_Wyss"
+        },
+        "kcrPreviewUrl": "https://read.amazon.ca/kp/embed?asin=B0872LDSCX&ref=x_gr_w_preview_new_nf_story_ca-20&tag=x_gr_w_preview_new_nf_story_ca-20&preview=inline",
+        "description": {
+            "html": "The Swiss Family Robinson (German: Der Schweizerische Robinson) is a novel by Johann David Wyss, first published in 1812, about a Swiss family shipwrecked in the East Indies e…",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/62111.The_Swiss_Family_Robinson"
+        },
+        "audio": "https://archive.org/download/swiss_family_robinson_librivox/swiss_family_robinson_01_wyss.mp3"
+    },
+    {
+        "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1411852091i/24280._SY475__.jpg",
+        "bookId": "24280",
+        "workId": "3208463",
+        "bookUrl": "/book/show/24280.Les_Mis_rables",
+        "from_search": true,
+        "from_srp": true,
+        "qid": "aPL3fpnuMd",
+        "rank": 1,
+        "title": "Les Misérables",
+        "bookTitleBare": "Les Misérables",
+        "numPages": 1463,
+        "avgRating": "4.20",
+        "ratingsCount": 804876,
+        "status": "Reading",
+        "author": {
+            "id": 13661,
+            "name": "Victor Hugo",
+            "isGoodreadsAuthor": false,
+            "profileUrl": "https://www.goodreads.com/author/show/13661.Victor_Hugo",
+            "worksListUrl": "https://www.goodreads.com/author/list/13661.Victor_Hugo"
+        },
+        "kcrPreviewUrl": null,
+        "description": {
+            "html": "Victor Hugo&apos;s tale of injustice, heroism and love follows the fortunes of Jean Valjean, an escaped convict determined to put his criminal past behind him. But his attempts to …",
+            "truncated": true,
+            "fullContentUrl": "https://www.goodreads.com/book/show/24280.Les_Mis_rables"
+        },
+        "audio": "https://archive.org/download/les_mis_vol01_0810_librivox/lesmiserables_vol1_00_hugo.mp3"
+    }
+]

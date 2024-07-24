@@ -57,6 +57,7 @@ function BookDetailsScreen({ navigation, route }) {
   const [fullBook, setFullBook] = useState(null);
   const [author, setAuthor] = useState(null);
   const [enabled, setEnabled] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const panRef = useRef();
   const loaded = useSharedValue(0);
   const y = useSharedValue(0);
@@ -82,8 +83,17 @@ function BookDetailsScreen({ navigation, route }) {
     );
 
     setSound(newSound);
+    setIsPlaying(true);
     await newSound.playAsync();
   }
+
+  async function pauseSound() {
+    if (sound) {
+      await sound.pauseAsync();
+      setIsPlaying(false);
+    }
+  }
+
   useEffect(() => (sound
     ? () => {
       sound.unloadAsync(); // Unload the sound when component unmounts
@@ -289,6 +299,12 @@ function BookDetailsScreen({ navigation, route }) {
     addIcon: {
       top: 3,
     },
+    playButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin,
+    },
   };
 
   // Find book in list
@@ -348,8 +364,13 @@ function BookDetailsScreen({ navigation, route }) {
                   </Text>
                 </Pressable>
               </View>
-              <Pressable onPress={playSound} style={styles.playButton}>
-                <AntDesign name="playcircleo" size={24} color={colors.primary} />
+
+              <Pressable onPress={isPlaying ? pauseSound : playSound} style={styles.playButton}>
+                <AntDesign
+                  name={isPlaying ? 'pausecircleo' : 'playcircleo'}
+                  size={24}
+                  color={colors.primary}
+                />
               </Pressable>
 
               <Animated.View style={anims.details}>

@@ -1,30 +1,35 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { AntDesign } from '@expo/vector-icons';
+import { useIsFocused, useTheme } from '@react-navigation/native';
+import axios from 'axios';
+import { Audio } from 'expo-av';
+import * as Haptics from 'expo-haptics';
+import { XMLParser } from 'fast-xml-parser';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 import {
-  View, Image, StatusBar, Pressable, StyleSheet,
+  Image,
+  Pressable,
+  StatusBar,
+  StyleSheet,
+  View,
 } from 'react-native';
+import { PanGestureHandler, ScrollView } from 'react-native-gesture-handler';
 import Animated, {
   interpolate,
-  withTiming,
   runOnJS,
   useAnimatedGestureHandler,
+  useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,
-  useAnimatedScrollHandler,
+  withTiming,
 } from 'react-native-reanimated';
-import { PanGestureHandler, ScrollView } from 'react-native-gesture-handler';
-import { useTheme, useIsFocused } from '@react-navigation/native';
-import { AntDesign } from '@expo/vector-icons';
-import { XMLParser } from 'fast-xml-parser';
-import * as Haptics from 'expo-haptics';
-import axios from 'axios';
-import PropTypes from 'prop-types';
 
-import Text from '../components/Text';
+import { useBooksState } from '../BookStore';
+import BookHeader from '../components/BookHeader';
 import List from '../components/BookList';
 import Button from '../components/Button';
-import BookHeader from '../components/BookHeader';
-import { useBooksState } from '../BookStore';
 import { setModal } from '../components/StatusModal';
+import Text from '../components/Text';
 
 const Console = console;
 const parser = new XMLParser();
@@ -63,6 +68,27 @@ function BookDetailsScreen({ navigation, route }) {
     margin, width, dark, colors, normalize, status, ios,
   } = useTheme();
   const HEADER = normalize(width + status, 500) + margin;
+
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    await Audio.setAudioModeAsync({
+      playsInSilentModeIOS: true,
+    });
+
+    const { sound: newSound } = await Audio.Sound.createAsync(
+      { uri: book.audio },
+      { shouldPlay: true },
+    );
+
+    setSound(newSound);
+    await newSound.playAsync();
+  }
+  useEffect(() => (sound
+    ? () => {
+      sound.unloadAsync(); // Unload the sound when component unmounts
+    }
+    : undefined), [sound]);
 
   // Go back to previous screen
   const goBack = () => {
@@ -322,6 +348,9 @@ function BookDetailsScreen({ navigation, route }) {
                   </Text>
                 </Pressable>
               </View>
+              <Pressable onPress={playSound} style={styles.playButton}>
+                <AntDesign name="playcircleo" size={24} color={colors.primary} />
+              </Pressable>
 
               <Animated.View style={anims.details}>
                 <View style={styles.authorBox}>
@@ -377,6 +406,7 @@ BookDetailsScreen.propTypes = {
         }).isRequired,
         avgRating: PropTypes.string.isRequired,
         numPages: PropTypes.number,
+        audio: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
   }).isRequired,

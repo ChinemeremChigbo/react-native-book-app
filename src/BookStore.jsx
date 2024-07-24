@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { proxy, useSnapshot } from 'valtio';
+import booksData from '../books.json';
 
 // global state
 const state = proxy({
@@ -8,9 +9,9 @@ const state = proxy({
 
 // load books from async storage once
 async function loadBooks() {
-  const json = await AsyncStorage.getItem('@lists');
-  const data = json ? JSON.parse(json) : [];
-  state.books = data;
+  // const json = await AsyncStorage.getItem('@lists');
+  // const data = json ? JSON.parse(json) : [];
+  state.books = booksData;
 }
 loadBooks();
 

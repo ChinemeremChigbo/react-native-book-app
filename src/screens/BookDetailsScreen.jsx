@@ -254,6 +254,7 @@ function BookDetailsScreen({ navigation, route }) {
     detailsRow: {
       flex: 1,
       paddingVertical: margin / 2,
+      alignItems: 'center',
     },
     detailsRowBorder: {
       borderLeftWidth: 1,
@@ -301,9 +302,13 @@ function BookDetailsScreen({ navigation, route }) {
     },
     playButton: {
       flexDirection: 'row',
-      alignItems: 'center',
       justifyContent: 'center',
-      margin,
+      alignItems: 'center',
+      paddingVertical: margin,
+      backgroundColor: colors.card,
+      borderRadius: 10,
+      marginTop: margin,
+      marginHorizontal: margin,
     },
   };
 
@@ -365,13 +370,15 @@ function BookDetailsScreen({ navigation, route }) {
                 </Pressable>
               </View>
 
-              <Pressable onPress={isPlaying ? pauseSound : playSound} style={styles.playButton}>
-                <AntDesign
-                  name={isPlaying ? 'pausecircleo' : 'playcircleo'}
-                  size={24}
-                  color={colors.primary}
-                />
-              </Pressable>
+              <View style={styles.playButton}>
+                <Pressable onPress={isPlaying ? pauseSound : playSound}>
+                  <AntDesign
+                    name={isPlaying ? 'pausecircleo' : 'playcircleo'}
+                    size={24}
+                    color={colors.primary}
+                  />
+                </Pressable>
+              </View>
 
               <Animated.View style={anims.details}>
                 <View style={styles.authorBox}>

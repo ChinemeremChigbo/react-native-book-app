@@ -57,7 +57,6 @@ function BookDetailsScreen({ navigation, route }) {
   const [fullBook, setFullBook] = useState(null);
   const [author, setAuthor] = useState(null);
   const [enabled, setEnabled] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
   const panRef = useRef();
   const loaded = useSharedValue(0);
   const y = useSharedValue(0);
@@ -70,37 +69,52 @@ function BookDetailsScreen({ navigation, route }) {
   } = useTheme();
   const HEADER = normalize(width + status, 500) + margin;
 
-  const [sound, setSound] = useState();
+  // Load book details
+  useEffect(() => {
+    // Related Books
+    axios
+      .get(
+        `https://www.goodreads.com/book/auto_complete?format=json&q=${book.author.name}`,
+      )
+      .then((resp) => {
+        const bks = resp.data.filter((bk, i, arr) => {
+          arr[i].imageUrl = bk.imageUrl.replace(/_..../, '_SY475_');
+          return book.bookId !== bk.bookId;
+        });
+        setRelated(bks);
+      })
+      .catch((error) => {
+        Console.log('Failed to related books:', error);
+      });
 
-  async function playSound() {
-    await Audio.setAudioModeAsync({
-      playsInSilentModeIOS: true,
-    });
+    // Book details
+    axios
+      .get(
+        `https://www.goodreads.com/book/show/${book.bookId}.xml?key=Bi8vh08utrMY3HAqM9rkWA`,
+      )
+      .then((resp) => {
+        const data = parser.parse(resp.data);
+        setFullBook(data?.GoodreadsResponse?.book);
+      })
+      .catch((error) => {
+        Console.log('Failed to get book details:', error);
+      });
 
-    const { sound: newSound } = await Audio.Sound.createAsync(
-      { uri: book.audio },
-      { shouldPlay: true },
-    );
+    // Author details
+    axios
+      .get(
+        `https://www.goodreads.com/author/show.xml?key=Bi8vh08utrMY3HAqM9rkWA&id=${book.author.id}`,
+      )
+      .then((resp) => {
+        const data = parser.parse(resp.data);
+        setAuthor(data?.GoodreadsResponse?.author);
+        loaded.value = withTiming(1);
+      })
+      .catch((error) => {
+        Console.log('Failed to get author details:', error);
+      });
+  }, [book]);
 
-    setSound(newSound);
-    setIsPlaying(true);
-    await newSound.playAsync();
-  }
-
-  async function pauseSound() {
-    if (sound) {
-      await sound.pauseAsync();
-      setIsPlaying(false);
-    }
-  }
-
-  useEffect(() => (sound
-    ? () => {
-      sound.unloadAsync(); // Unload the sound when component unmounts
-    }
-    : undefined), [sound]);
-
-  // Go back to previous screen
   const goBack = () => {
     navigation.goBack();
     Haptics.selectionAsync();
@@ -150,53 +164,6 @@ function BookDetailsScreen({ navigation, route }) {
       }
     },
   });
-
-  // Load book details
-  useEffect(() => {
-    // Related Books
-    axios
-      .get(
-        `https://www.goodreads.com/book/auto_complete?format=json&q=${book.author.name}`,
-      )
-      .then((resp) => {
-        const bks = resp.data.filter((bk, i, arr) => {
-          arr[i].imageUrl = bk.imageUrl.replace(/_..../, '_SY475_');
-          return book.bookId !== bk.bookId;
-        });
-        setRelated(bks);
-      })
-      .catch((error) => {
-        Console.log('Failed to related books:', error);
-      });
-
-    // Book details
-    axios
-      .get(
-        `https://www.goodreads.com/book/show/${book.bookId}.xml?key=Bi8vh08utrMY3HAqM9rkWA`,
-      )
-      .then((resp) => {
-        const data = parser.parse(resp.data);
-        setFullBook(data?.GoodreadsResponse?.book);
-      })
-      .catch((error) => {
-        Console.log('Failed to get book details:', error);
-      });
-
-    // Author details
-    axios
-      .get(
-        `https://www.goodreads.com/author/show.xml?key=Bi8vh08utrMY3HAqM9rkWA&id=${book.author.id}`,
-      )
-      .then((resp) => {
-        const data = parser.parse(resp.data);
-        setAuthor(data?.GoodreadsResponse?.author);
-        loaded.value = withTiming(1);
-      })
-      .catch((error) => {
-        Console.log('Failed to get author details:', error);
-      });
-  }, [book]);
-
   // Screen anims
   const anims = {
     screen: useAnimatedStyle(() => ({
@@ -403,9 +370,12 @@ function BookDetailsScreen({ navigation, route }) {
               />
             </Button>
 
-            <Button onPress={isPlaying ? pauseSound : playSound} style={styles.playButton}>
+            <Button
+              onPress={() => navigation.navigate('AudioPlayerScreen', { audioUri: book.audio })}
+              style={styles.playButton}
+            >
               <AntDesign
-                name={isPlaying ? 'pausecircleo' : 'playcircleo'}
+                name="playcircleo"
                 size={21}
                 style={styles.addIcon}
               />
@@ -420,6 +390,7 @@ function BookDetailsScreen({ navigation, route }) {
 BookDetailsScreen.propTypes = {
   navigation: PropTypes.shape({
     goBack: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
   }).isRequired,
   route: PropTypes.shape({
     params: PropTypes.shape({

@@ -5,6 +5,7 @@ import BooksScreen from './screens/BooksScreen';
 import BookListScreen from './screens/BookListScreen';
 import BookDetailsScreen from './screens/BookDetailsScreen';
 import BookSearchScreen from './screens/BookSearchScreen';
+import AudioPlayerScreen from './screens/AudioPlayerScreen';
 
 // Root Stack of App
 function RootNavigator() {
@@ -89,6 +90,14 @@ function RootNavigator() {
             open: searchTranstion,
             close: searchTranstion,
           },
+        }}
+      />
+      <BookStack.Screen
+        name="AudioPlayerScreen"
+        component={AudioPlayerScreen}
+        options={{
+          headerShown: false,
+          cardStyleInterpolator: fadeScreen,
         }}
       />
     </BookStack.Navigator>

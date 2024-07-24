@@ -291,7 +291,7 @@ function BookDetailsScreen({ navigation, route }) {
     addButton: {
       width: 60,
       height: 60,
-      right: margin,
+      left: margin,
       bottom: margin,
       borderRadius: 60,
       position: 'absolute',
@@ -301,21 +301,20 @@ function BookDetailsScreen({ navigation, route }) {
       top: 3,
     },
     playButton: {
-      flexDirection: 'row',
+      width: 60,
+      height: 60,
+      right: margin,
+      bottom: margin,
+      borderRadius: 60,
+      position: 'absolute',
+      backgroundColor: colors.button,
       justifyContent: 'center',
       alignItems: 'center',
-      paddingVertical: margin,
-      backgroundColor: colors.card,
-      borderRadius: 10,
-      marginTop: margin,
-      marginHorizontal: margin,
     },
   };
 
-  // Find book in list
   const item = bookList.find((b) => b.bookId === book.bookId);
 
-  // Render book details
   return (
     <>
       <View style={styles.overlay} />
@@ -370,16 +369,6 @@ function BookDetailsScreen({ navigation, route }) {
                 </Pressable>
               </View>
 
-              <View style={styles.playButton}>
-                <Pressable onPress={isPlaying ? pauseSound : playSound}>
-                  <AntDesign
-                    name={isPlaying ? 'pausecircleo' : 'playcircleo'}
-                    size={24}
-                    color={colors.primary}
-                  />
-                </Pressable>
-              </View>
-
               <Animated.View style={anims.details}>
                 <View style={styles.authorBox}>
                   <Image
@@ -410,6 +399,14 @@ function BookDetailsScreen({ navigation, route }) {
               <AntDesign
                 size={21}
                 name={getIcon(item?.status)}
+                style={styles.addIcon}
+              />
+            </Button>
+
+            <Button onPress={isPlaying ? pauseSound : playSound} style={styles.playButton}>
+              <AntDesign
+                name={isPlaying ? 'pausecircleo' : 'playcircleo'}
+                size={21}
                 style={styles.addIcon}
               />
             </Button>
